@@ -3,7 +3,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import RoundedButton from "../button";
 import PreodicItem from "../preodic_table_item";
 import { ArrowUpRight, Send } from "react-feather";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { projectsList, techStacksList } from "../../utils/mappings";
@@ -30,8 +30,6 @@ const LandingPage = () => {
       </mesh>
     );
   };
-
-  const { scrollYProgress } = useScroll();
 
   const [techStacks, setTechStacks] = useState(techStacksList);
   const [projects, setProjects] = useState(projectsList);
@@ -155,7 +153,7 @@ const LandingPage = () => {
                   <PreodicItem
                     forceURL={item.forceURL}
                     title={item.title}
-                    label={item.label}
+                    url={item.url}
                     lock={item.lock}
                     customClass={item.customClass}
                     values={[index + 47, index + 107.5]}

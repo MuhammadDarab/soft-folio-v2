@@ -1,128 +1,121 @@
 export const techStacksList = [
   {
     title: "React",
-    label: "react",
+    url: "devicons/react-min.png",
   },
   {
     title: "Node",
-    label: "nodejs",
+    url: "devicons/nodejs-min.png",
   },
   {
     title: "Sequelize",
-    label: "sequelize",
+    url: "devicons/sequelize-min.png",
   },
   {
     title: "Socket IO",
-    label: "socketio",
+    url: "devicons/socketio-min.png",
   },
   {
     title: "Git",
-    label: "git",
+    url: "devicons/git-min.png",
   },
   {
     title: "Ubuntu",
-    label: "debian",
+    url: "devicons/debian-min.png",
   },
   {
     title: "Trello",
-    label: "trello",
-    forceURL:
-      "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/trello/trello-plain.svg",
+    url: "devicons/trello-min.png",
   },
   {
     title: "Three Js",
-    label: "threejs",
+    url: "devicons/threejs-min.png",
   },
   {
     title: "MongoDb",
-    forceURL: "./MaterialDesignMongo.png",
+    url: "devicons/MaterialDesignMongo-min.png",
   },
   {
     title: "Redux",
-    label: "redux",
+    url: "devicons/redux-min.png",
   },
   {
     title: "VSCode",
-    label: "vscode",
+    url: "devicons/vscode-min.png",
   },
   {
     title: "Postgres",
-    label: "...",
-    forceURL: "./MaterialDesignPostgres.png",
+    url: "devicons/MaterialDesignPostgres-min.png",
   },
   {
     title: "Electron",
-    label: "electron",
+    url: "devicons/electron-min.png",
   },
   {
     title: "Express",
-    label: "express",
+    url: "devicons/express-min.png",
   },
   {
     title: "Tailwind",
-    label: "tailwindcss",
-    forceURL:
-      "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/tailwindcss/tailwindcss-plain.svg",
+    url: "devicons/tailwindcss-min.png",
   },
   {
     title: "Material UI",
-    label: "materialui",
+    url: "devicons/materialui-min.png",
   },
   {
     title: "Heroku",
-    label: "heroku",
+    url: "devicons/heroku-min.png",
   },
   {
     title: "React Native",
-    label: "react",
+    url: "devicons/react-min.png",
     customClass: "hue-rotate-[265deg]",
   },
   {
     title: "Javascript",
-    label: "javascript",
+    url: "devicons/javascript-min.png",
   },
   {
     title: "Figma",
-    label: "figma",
+    url: "devicons/figma-min.png",
   },
   {
     title: "Vite",
-    label: "vite",
-    forceURL: "./vite.svg",
+    url: "devicons/vite-min.png",
+  },
+  {
+    title: "Framer Motion",
+    url: "devicons/framer-min.png",
   },
   {
     title: "Docker",
-    label: "",
-    forceURL: "./lucide_container.png",
+    url: "devicons/lucide_container-min.png",
     author: "https://github.com/lucide-icons/lucide",
   },
   {
     title: "Typescript",
-    label: "typescript",
+    url: "devicons/typescript-min.png",
   },
   {
     title: "Terminal",
-    label: "terminal",
-    forceURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Windows_Terminal_logo.svg/1280px-Windows_Terminal_logo.svg.png",
+    author:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Windows_Terminal_logo.svg/1280px-Windows_Terminal_logo.svg.png", 
+    url: "devicons/terminal-min.png",
   },
   {
     title: "Redis",
-    label: "redis",
+    url: "devicons/redis-min.png",
     lock: true,
   },
   {
     title: "GraphQl",
-    label: "graphql",
-    forceURL:
-      "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/graphql/graphql-plain.svg",
+    url: "devicons/graphql-min.png",
     lock: true,
   },
   {
     title: "Scss",
-    label: "scss",
-    forceURL:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",
+    author: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",
+    url: 'devicons/sass-min.png',
     lock: false,
   },
 ];

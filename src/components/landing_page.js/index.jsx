@@ -2,160 +2,38 @@ import { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import RoundedButton from "../button";
 import PreodicItem from "../preodic_table_item";
-import { ArrowUpRight } from "react-feather";
+import { ArrowUpRight, Send } from "react-feather";
+import { motion } from "framer-motion";
 
+import { Canvas, useFrame } from "@react-three/fiber";
+import { projectsList, techStacksList } from "../../utils/mappings";
+import ChatBox from "../chat_box";
 
 const LandingPage = () => {
-  const [techStacks, setTechStacks] = useState([
-    {
-      title: "React",
-      label: "react",
-    },
-    {
-      title: "Node",
-      label: "nodejs",
-    },
-    {
-      title: "Sequelize",
-      label: "sequelize",
-    },
-    {
-      title: "Socket IO",
-      label: "socketio",
-    },
-    {
-      title: "Git",
-      label: "git",
-    },
-    {
-      title: "Ubuntu",
-      label: "debian",
-    },
-    {
-      title: "Trello",
-      label: "trello",
-      forceURL:
-        "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/trello/trello-plain.svg",
-    },
-    {
-      title: "Three Js",
-      label: "threejs",
-    },
-    {
-      title: "MongoDb",
-      forceURL: "./MaterialDesignMongo.png",
-    },
-    {
-      title: "Redux",
-      label: "redux",
-    },
-    {
-      title: "VSCode",
-      label: "vscode",
-    },
-    {
-      title: "Postgres",
-      label: "...",
-      forceURL: "./MaterialDesignPostgres.png",
-    },
-    {
-      title: "Electron",
-      label: "electron",
-    },
-    {
-      title: "Express",
-      label: "express",
-    },
-    {
-      title: "Tailwind",
-      label: "tailwindcss",
-      forceURL:
-        "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/tailwindcss/tailwindcss-plain.svg",
-    },
-    {
-      title: "Material UI",
-      label: "materialui",
-    },
-    {
-      title: "Heroku",
-      label: "heroku",
-    },
-    {
-      title: "React Native",
-      label: "react",
-      customClass: "hue-rotate-[265deg]",
-    },
-    {
-      title: "Javascript",
-      label: "javascript",
-    },
-    {
-      title: "Figma",
-      label: "figma",
-    },
-    {
-      title: "Vite",
-      label: "vite",
-      forceURL: "./vite.svg",
-    },
-    {
-      title: "Docker",
-      label: "",
-      forceURL: "./lucide_container.png",
-      author: "https://github.com/lucide-icons/lucide",
-    },
-    {
-      title: "Typescript",
-      label: "typescript",
-    },
-    {
-      title: "Terminal",
-      label: "terminal",
-      forceURL:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Windows_Terminal_logo.svg/1280px-Windows_Terminal_logo.svg.png",
-    },
-    {
-      title: "Redis",
-      label: "redis",
-      lock: true,
-    },
-    {
-      title: "GraphQl",
-      label: "graphql",
-      forceURL:
-        "https://cdn.jsdelivr.net/npm/devicon@2.14.0/icons/graphql/graphql-plain.svg",
-      lock: true,
-    },
-    {
-      title: "Scss",
-      label: "scss",
-      forceURL:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",
-      lock: false,
-    },
-  ]);
-  const [projects, setProjects] = useState([
-    {
-      title: 'First Project',
-      description: ''
-    },
-    {
-      title: 'Second Project',
-      description: ''
-    },
-    {
-      title: 'Third Project',
-      description: ''
-    },
-    {
-      title: 'Fourth Project',
-      description: ''
-    },
-    {
-      title: 'Fifth Project',
-      description: ''
-    },
-  ]);
+  // Define a new functional component for the spinning cube
+  const SpinningCube = () => {
+    const [color, setColor] = useState("rgb(55, 65, 81, 1)");
+    const cubeRef = useRef();
+
+    useFrame(() => {
+      cubeRef.current.rotation.x += 0.01;
+      cubeRef.current.rotation.y += 0.01;
+    });
+
+    return (
+      <mesh
+        onPointerEnter={() => setColor("orange")}
+        onPointerLeave={() => setColor("rgb(55, 65, 81, 1)")}
+        ref={cubeRef}
+      >
+        <boxGeometry args={[3.5, 3.5, 3.5]} />
+        <meshBasicMaterial color={color} speed={1} factor={0.6} />
+      </mesh>
+    );
+  };
+
+  const [techStacks, setTechStacks] = useState(techStacksList);
+  const [projects, setProjects] = useState(projectsList);
   const scrollRef = useRef(null);
   const AboutMeRef = useRef(null);
   const MyProjectsRef = useRef(null);
@@ -194,72 +72,133 @@ const LandingPage = () => {
         data-scroll-container
         className="bg-[#F5F5F5] text-gray-700 cursor-default select-none"
       >
-        <div className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700">
-          <div>
-            Hey, i am..
-            <br />
-            Muhammad Darab
-          </div>
-          <div className="p-[0.5px] bg-gray-400 my-8"></div>
-          <RoundedButton label="Cool, lets go!" onClick={scrollToAboutMe} />
-          <div id="section-splitting-margin" className="my-24"></div>
-          <div className="text-6xl text-left mb-12 ml-[60%]" ref={AboutMeRef}>
-            About me.
-          </div>
-          <div className="text-lg text-left font-light ml-[60%]">
-            My career journey began at Invozone, where I initially learned
-            JavaScript through their specialized course. Upon completion,I
-            transitioned into a role as an Associate Software Engineer, working
-            primarily with the MERN stack, Electron.js, Docker, and Git. <br />
-            <br /> After a year and three months of work,{" "}
-            <b className="bg-yellow-300">
-              I was promoted to being a Software Engineer.
-            </b>{" "}
-            Throughout this journey, I embraced challenges, continuously
-            expanding my skills and knowledge.
-            <RoundedButton
-              sx={{ marginTop: 24 }}
-              label="Lets proceed!"
-              onClick={scrollToMyProjects}
-            />
+        <div key={Date.now()} className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700">
+          <motion.section
+            key={Date.now()} 
+            initial={{ scale: 0.8, filter: 'blur(10px)' }}
+            animate={{ scale: 1, filter: 'blur(0px)' }}
+            transition={{ type: "spring", delay: 1 }}
+          >
+            <div>
+              Hey, i am..
+              <br />
+              Muhammad Darab
+            </div>
+            <div className="p-[0.5px] bg-gray-400 my-8"></div>
+            <RoundedButton label="Cool, lets go!" onClick={scrollToAboutMe} />
+            <div id="section-splitting-margin" className="my-24"></div>
+          </motion.section>
+          <div className="flex flex-row justify-between">
+            <motion.div
+              className="w-full"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ margin: "-200px" }}
+              transition={{ duration: 0.3, ease: "easeOut", frameRate: 60 }}
+            >
+              <Canvas>
+                <ambientLight />
+                <pointLight position={[10, 10, 10]} />
+                <SpinningCube />
+              </Canvas>
+            </motion.div>
+            <motion.div
+              className="w-full"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ margin: "-200px" }}
+              transition={{ duration: 0.2, ease: "easeOut", frameRate: 60 }}
+            >
+              <div className="text-6xl text-left mb-12" ref={AboutMeRef}>
+                About me.
+              </div>
+              <div className="text-lg text-left font-light">
+                My career journey began at Invozone, where I initially learned
+                JavaScript through their specialized course. Upon completion,I
+                transitioned into a role as an Associate Software Engineer,
+                <br />
+                <br /> After a year and three months of work,{" "}
+                <b className="bg-yellow-300">
+                  I was promoted to being a Software Engineer.
+                </b>{" "}
+                Throughout this journey, I embraced challenges, continuously
+                expanding my skills and knowledge, working primarily with the MERN stack, Electron.js, Docker, and
+                Git.
+                <RoundedButton
+                  sx={{ marginTop: 24 }}
+                  label="Lets proceed!"
+                  onClick={scrollToMyProjects}
+                />
+              </div>
+            </motion.div>
           </div>
           <div className="p-[0.25px] bg-gray-400 mt-48"></div>
-          <div className="text-6xl pt-8 py-10" ref={MyProjectsRef}>
+          <div className="text-6xl pt-8" ref={MyProjectsRef}>
             Worked on..
           </div>
-          <div className="flex flex-wrap">
+          <div className="text-gray-400 text-sm pt-2 pb-4" ref={MyProjectsRef}>
+            Note: numbers below dont indicate anything.. <br />
+            was trying to make something like preodic table.
+            <br /> but this feels nice!
+          </div>
+
+          <motion.div className="flex flex-wrap">
             {techStacks.map((item, index) => {
               return (
-                <PreodicItem
-                  forceURL={item.forceURL}
+                <motion.div
                   key={index}
-                  title={item.title}
-                  label={item.label}
-                  lock={item.lock}
-                  customClass={item.customClass}
-                  values={[index + 47, index + 107.5]}
-                />
+                  initial={{ scale: 0.2, rotate: 50 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ margin: '-200px' }}
+                  transition={{ type: "spring" }}
+                >
+                  <PreodicItem
+                    forceURL={item.forceURL}
+                    title={item.title}
+                    url={item.url}
+                    lock={item.lock}
+                    customClass={item.customClass}
+                    values={[index + 47, index + 107.5]}
+                  />
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
           <div className="p-[0.25px] bg-gray-400 mt-48"></div>
-          <div className="text-6xl pt-8 py-10" ref={MyProjectsRef}>
+          <div className="text-6xl pt-8 py-10 mb-24" ref={MyProjectsRef}>
             Mostly using these, have contributed on..
           </div>
-          {projects.map((item) => {
+          {projects.map((item, index) => {
             return (
               <>
-                <div className="flex flex-row mb-2 justify-between items-center">
-                  <span className="text-4xl font-light">{item.title}</span>
-                  <span className="text-4xl font-light"><ArrowUpRight /></span>
-                </div>
-                <div className="p-[0.25px] bg-gray-400 mb-8"></div>
-                
+                <motion.div key={index} initial={{ x: -30, rotate: 15, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, rotate: 0, opacity: 1 }} transition={{ type: 'spring' }} className="flex flex-row mb-2 justify-between items-center">
+                  <div>
+                    <span className="text-4xl font-light">{item.title}</span>
+                    <div className="text-sm text-gray-500 w-[90%]">
+                      {item.description}
+                    </div>
+                  </div>
+                  <span className="text-4xl font-light">
+                    <ArrowUpRight />
+                  </span>
+                </motion.div>
+                <div className="p-[0.25px] bg-gray-400"></div>
               </>
-            )
+            );
           })}
+          <motion.div className="text-9xl mt-24" initial={{ scale: 1.3, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ scale: 1, opacity: 1 }} transition={{ type: 'spring' }} >
+            Say <span className="bg-gray-700 text-white">Hi..</span> <br /> Will
+            reply!...
+          </motion.div>
+          <motion.div initial={{ x: -40, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, opacity: 1 }} className="text-gray-500 text-2xl mt-4">
+            ~ did that kinda rhyme..?
+          </motion.div>
+          <br />
+          <br />
+          <ChatBox />
+          <br />
+          <br />
         </div>
-        <div id="section-splitting-margin" className="py-48"></div>
       </div>
     </>
   );

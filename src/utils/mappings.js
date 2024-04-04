@@ -121,29 +121,29 @@ export const techStacksList = [
 ];
 
 export const projectsList = [
-  {
-    title: "Cantt College CMS.",
-    description:
-      "Text that is set temporarily in place of actual copy is called “placeholder text” or “dummy text.” It often takes the form of “lorem ipsum”—a sequence of words from a work of classical literature that is deliberately intended to not be read (in modern times). This is often referred to as “Latin” and—erroneously—“Greek,” or “Greeked.”",
-  },
+  // {
+  //   title: "Cantt College CMS.",
+  //   description:
+  //     "Text that is set temporarily in place of actual copy is called “placeholder text” or “dummy text.” It often takes the form of “lorem ipsum”—a sequence of words from a work of classical literature that is deliberately intended to not be read (in modern times). This is often referred to as “Latin” and—erroneously—“Greek,” or “Greeked.”",
+  // },
   {
     title: "Laser Box UI",
     description:
-      "The purpose of any placeholder text, including lorem ipsum, is to indicate that the text is not there to be read, which is why it’s used in design mockups, where the viewer should be focussing on the overall design, and in type specimens, where the reader should be focussing on the characters’s personality and design, and overall typographic color.",
+      "Laser Box is a project where a user can send data from one computer to another via Laser light, (the ones we buy at toy stores..), I had built its application interface using Electron Js..",
   },
-  {
-    title: "Minni Chat",
-    description:
-      "A Websocket based React native application, where you can send and retrieve your messages.",
-  },
+  // {
+  //   title: "Minni Chat",
+  //   description:
+  //     "A Websocket based React native application, where you can send and retrieve your messages.",
+  // },
   {
     title: "Salah Reminder App.",
     description:
-      "Fonts and icons makes it easy to integrate expressive type and icons",
+      "A Node.js based reminder solution for notifying your workspace regarding salah times, ever in a meeting a forget salah time, look no further, Salah Reminder has you covered, get all the latest salah times, get a notification message in your collaborative workspace application such as Slack, InvoChat etc..",
   },
   {
     title: "Mimic Nike UI",
     description:
-      "Google Fonts makes it easy to bring personality and performance to your websites and products. Our robust catalog of open-source fonts and icons makes it easy to integrate expressive type and icons",
+      "Fun project where i tried to make something similar to NIKE's UI",
   },
 ];

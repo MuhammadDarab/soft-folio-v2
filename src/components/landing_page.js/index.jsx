@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { projectsList, techStacksList } from "../../utils/mappings";
+import ChatBox from "../chat_box";
 
 const LandingPage = () => {
   // Define a new functional component for the spinning cube
@@ -71,8 +72,9 @@ const LandingPage = () => {
         data-scroll-container
         className="bg-[#F5F5F5] text-gray-700 cursor-default select-none"
       >
-        <div className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700">
+        <div key={Date.now()} className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700">
           <motion.section
+            key={Date.now()} 
             initial={{ scale: 0.8, filter: 'blur(10px)' }}
             animate={{ scale: 1, filter: 'blur(0px)' }}
             transition={{ type: "spring", delay: 1 }}
@@ -166,10 +168,10 @@ const LandingPage = () => {
           <div className="text-6xl pt-8 py-10 mb-24" ref={MyProjectsRef}>
             Mostly using these, have contributed on..
           </div>
-          {projects.map((item) => {
+          {projects.map((item, index) => {
             return (
               <>
-                <motion.div initial={{ x: -30, rotate: 15, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, rotate: 0, opacity: 1 }} transition={{ type: 'spring' }} className="flex flex-row mb-2 justify-between items-center">
+                <motion.div key={index} initial={{ x: -30, rotate: 15, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, rotate: 0, opacity: 1 }} transition={{ type: 'spring' }} className="flex flex-row mb-2 justify-between items-center">
                   <div>
                     <span className="text-4xl font-light">{item.title}</span>
                     <div className="text-sm text-gray-500 w-[90%]">
@@ -188,29 +190,12 @@ const LandingPage = () => {
             Say <span className="bg-gray-700 text-white">Hi..</span> <br /> Will
             reply!...
           </motion.div>
-          <motion.div initial={{ x: -40 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0 }} className="text-gray-500 text-2xl mt-4">
+          <motion.div initial={{ x: -40, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, opacity: 1 }} className="text-gray-500 text-2xl mt-4">
             ~ did that kinda rhyme..?
           </motion.div>
-
-          <motion.div  className="text-lg mt-8" initial={{ x: -40 }} viewport={{ margin: '-100px' }} whileInView={{ x: 0 }} >
-            <input
-              type="text"
-              name=""
-              id=""
-              className="bg-transparent border-[1px] border-gray-700"
-              placeholder="your_mail@gmail.com"
-            />{" "}
-            says: Hey, Muhammad Darab.. lets{" "}
-            <input
-              type="text"
-              className="bg-transparent border-[1px] border-gray-700 w-96"
-              placeholder="connect, i have this idea that i want developed..."
-            />
-            <Send className="ml-4 inline"/>
-
-          </motion.div>
           <br />
           <br />
+          <ChatBox />
           <br />
           <br />
         </div>

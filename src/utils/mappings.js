@@ -19,14 +19,15 @@ export const techStacksList = [
     title: "Git",
     url: "devicons/git-min.png",
   },
-  {
-    title: "Ubuntu",
-    url: "devicons/debian-min.png",
-  },
-  {
-    title: "Trello",
-    url: "devicons/trello-min.png",
-  },
+  // {
+  //   title: "Ubuntu",
+  //   url: "devicons/ubuntu-min.png",
+  //   author: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UbuntuCoF.svg/2048px-UbuntuCoF.svg.png'
+  // },
+  // {
+  //   title: "Trello",
+  //   url: "devicons/trello-min.png",
+  // },
   {
     title: "Three Js",
     url: "devicons/threejs-min.png",
@@ -39,10 +40,10 @@ export const techStacksList = [
     title: "Redux",
     url: "devicons/redux-min.png",
   },
-  {
-    title: "VSCode",
-    url: "devicons/vscode-min.png",
-  },
+  // {
+  //   title: "VSCode",
+  //   url: "devicons/vscode-min.png",
+  // },
   {
     title: "Postgres",
     url: "devicons/MaterialDesignPostgres-min.png",
@@ -63,10 +64,10 @@ export const techStacksList = [
     title: "Material UI",
     url: "devicons/materialui-min.png",
   },
-  {
-    title: "Heroku",
-    url: "devicons/heroku-min.png",
-  },
+  // {
+  //   title: "Heroku",
+  //   url: "devicons/heroku-min.png",
+  // },
   {
     title: "React Native",
     url: "devicons/react-min.png",
@@ -76,10 +77,10 @@ export const techStacksList = [
     title: "Javascript",
     url: "devicons/javascript-min.png",
   },
-  {
-    title: "Figma",
-    url: "devicons/figma-min.png",
-  },
+  // {
+  //   title: "Figma",
+  //   url: "devicons/figma-min.png",
+  // },
   {
     title: "Vite",
     url: "devicons/vite-min.png",
@@ -97,21 +98,21 @@ export const techStacksList = [
     title: "Typescript",
     url: "devicons/typescript-min.png",
   },
-  {
-    title: "Terminal",
-    author:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Windows_Terminal_logo.svg/1280px-Windows_Terminal_logo.svg.png", 
-    url: "devicons/terminal-min.png",
-  },
-  {
-    title: "Redis",
-    url: "devicons/redis-min.png",
-    lock: true,
-  },
-  {
-    title: "GraphQl",
-    url: "devicons/graphql-min.png",
-    lock: true,
-  },
+  // {
+  //   title: "Terminal",
+  //   author:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Windows_Terminal_logo.svg/1280px-Windows_Terminal_logo.svg.png", 
+  //   url: "devicons/terminal-min.png",
+  // },
+  // {
+  //   title: "Redis",
+  //   url: "devicons/redis-min.png",
+  //   lock: true,
+  // },
+  // {
+  //   title: "GraphQl",
+  //   url: "devicons/graphql-min.png",
+  //   lock: true,
+  // },
   {
     title: "Scss",
     author: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png",

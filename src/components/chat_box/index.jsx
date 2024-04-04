@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:3000/");
-// const socket = io("https://mcs-test-orgs.koyeb.app/");
+// const socket = io("http://localhost:3000/");
+const socket = io("https://mcs-test-orgs.koyeb.app/");
 
 let chatTypingInterval = 0;
 
@@ -58,11 +58,12 @@ const ChatBox = () => {
   }, [inputText]);
 
   return (
+    <>
     <div className="w-full border rounded p-4">
       <div className="mb-4 border-b">
-        <h2 className="text-xl">Send me a realtime message..</h2>
+        <h2 className="text-xl">🟢Send me a realtime message..</h2>
         <h4 className="text-sm text-gray-500">
-          Your message will land in my phone! In Shaa Allah!
+          Your message will land on my phone!, will get back to you as soon as i see it! In Shaa Allah!
         </h4>
       </div>
       <div className="max-h-72 h-72 overflow-y-auto mb-4 text-sm" ref={chatBoxRef}>
@@ -118,6 +119,8 @@ const ChatBox = () => {
         </motion.div>
       }
     </div>
+    <br />
+    </>
   );
 };
 

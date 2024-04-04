@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import RoundedButton from "../button";
 import PreodicItem from "../preodic_table_item";
-import { ArrowUpRight, Send } from "react-feather";
+import { ArrowUpRight } from "react-feather";
 import { motion } from "framer-motion";
 
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -114,8 +114,8 @@ const LandingPage = () => {
               </div>
               <div className="text-lg text-left font-light">
                 My career journey began at Invozone, where I initially learned
-                JavaScript through their specialized course. Upon completion,I
-                transitioned into a role as an Associate Software Engineer,
+                JavaScript through their on campus course. Upon completion, I
+                was hired & had transitioned into a role as an Associate Software Engineer,
                 <br />
                 <br /> After a year and three months of work,{" "}
                 <b className="bg-yellow-300">
@@ -194,9 +194,7 @@ const LandingPage = () => {
             ~ did that kinda rhyme..?
           </motion.div>
           <br />
-          <br />
           <ChatBox />
-          <br />
           <br />
         </div>
       </div>

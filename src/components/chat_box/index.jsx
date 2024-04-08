@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
-// const socket = io("http://localhost:3000/");
-const socket = io("https://mcs-test-orgs.koyeb.app/");
+const socket = io("http://localhost:3000/");
+// const socket = io("https://mcs-test-orgs.koyeb.app/");
 
 let chatTypingInterval = 0;
 

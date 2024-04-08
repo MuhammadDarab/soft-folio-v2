@@ -72,11 +72,14 @@ const LandingPage = () => {
         data-scroll-container
         className="bg-[#F5F5F5] text-gray-700 cursor-default select-none"
       >
-        <div key={Date.now()} className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700">
+        <div
+          key={Date.now()}
+          className="pl-72 pt-52 text-8xl w-[85%] bg-[#F5F5F5] text-gray-700"
+        >
           <motion.section
-            key={Date.now()} 
-            initial={{ scale: 0.8, filter: 'blur(10px)' }}
-            animate={{ scale: 1, filter: 'blur(0px)' }}
+            key={Date.now()}
+            initial={{ scale: 0.8, filter: "blur(10px)" }}
+            animate={{ scale: 1, filter: "blur(0px)" }}
             transition={{ type: "spring", delay: 1 }}
           >
             <div>
@@ -115,15 +118,16 @@ const LandingPage = () => {
               <div className="text-lg text-left font-light">
                 My career journey began at Invozone, where I initially learned
                 JavaScript through their on campus course. Upon completion, I
-                was hired & had transitioned into a role as an Associate Software Engineer,
+                was hired & had transitioned into a role as an Associate
+                Software Engineer,
                 <br />
                 <br /> After a year and three months of work,{" "}
                 <b className="bg-yellow-300">
                   I was promoted to being a Software Engineer.
                 </b>{" "}
                 Throughout this journey, I embraced challenges, continuously
-                expanding my skills and knowledge, working primarily with the MERN stack, Electron.js, Docker, and
-                Git.
+                expanding my skills and knowledge, working primarily with the
+                MERN stack, Electron.js, Docker, and Git.
                 <RoundedButton
                   sx={{ marginTop: 24 }}
                   label="Lets proceed!"
@@ -149,7 +153,7 @@ const LandingPage = () => {
                   key={index}
                   initial={{ scale: 0.2, rotate: 50 }}
                   whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={{ margin: '-200px' }}
+                  viewport={{ margin: "-200px" }}
                   transition={{ type: "spring" }}
                 >
                   <PreodicItem
@@ -171,7 +175,14 @@ const LandingPage = () => {
           {projects.map((item, index) => {
             return (
               <>
-                <motion.div key={index} initial={{ x: -30, rotate: 15, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, rotate: 0, opacity: 1 }} transition={{ type: 'spring' }} className="flex flex-row mb-2 justify-between items-center">
+                <motion.div
+                  key={index}
+                  initial={{ x: -30, rotate: 15, opacity: 0 }}
+                  viewport={{ margin: "-200px" }}
+                  whileInView={{ x: 0, rotate: 0, opacity: 1 }}
+                  transition={{ type: "spring" }}
+                  className="flex flex-row mb-2 justify-between items-center"
+                >
                   <div>
                     <span className="text-4xl font-light">{item.title}</span>
                     <div className="text-sm text-gray-500 w-[90%]">
@@ -186,15 +197,45 @@ const LandingPage = () => {
               </>
             );
           })}
-          <motion.div className="text-9xl mt-24" initial={{ scale: 1.3, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ scale: 1, opacity: 1 }} transition={{ type: 'spring' }} >
+          <motion.div
+            className="text-9xl mt-24"
+            initial={{ scale: 1.3, opacity: 0 }}
+            viewport={{ margin: "-200px" }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring" }}
+          >
             Say <span className="bg-gray-700 text-white">Hi..</span> <br /> Will
             reply!...
           </motion.div>
-          <motion.div initial={{ x: -40, opacity: 0 }} viewport={{ margin: '-200px' }} whileInView={{ x: 0, opacity: 1 }} className="text-gray-500 text-2xl mt-4">
+          <motion.div
+            initial={{ x: -40, opacity: 0 }}
+            viewport={{ margin: "-200px" }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className="text-gray-500 text-2xl mt-4"
+          >
             ~ did that kinda rhyme..?
           </motion.div>
           <br />
           <ChatBox />
+          <br />
+          <div className="text-xs">
+            Heavily Inspired by. <br />-{" "}
+            <a href="https://dennissnellenberg.com/" target="_blank">
+              [Dennis]
+            </a>
+            <br />-{" "}
+            <a href="https://hematogenix.com/" target="_blank">
+              [Hexameto]
+            </a>
+            <br />-{" "}
+            <a
+              href="https://locomotivemtl.github.io/locomotive-scroll/"
+              target="_blank"
+            >
+              [Locomotive Scroll]
+            </a>
+          </div>
+          <br />
           <br />
         </div>
       </div>
